@@ -1,7 +1,7 @@
-# -HoVer-Net: segmentation and classification of cell nuclear-
+# -HoVer-Net: segmentation and classification of cell nuclear & Graph construc-
 ## 1. 简介
 
-本项目复现HoVer-Net在乳腺癌数据集上的细胞分割分类任务
+HoVer-Net在乳腺癌数据集上的细胞分割分类，并基于细胞邻接关系建图
 
 论文引用：https://www.nature.com/articles/s41467-023-42504-y  "Single-cell morphological and topological atlas reveals the ecosystem diversity of human breast cancer"
 
@@ -100,6 +100,8 @@ HoVer-Net 预测时，由于使用滑动窗口切片，导致核可能被截断�
   ```
   self.__save_json(json_path, self.wsi_inst_info, mag=self.proc_mag)
   ```
+  ![QQ_1739505467907](https://github.com/user-attachments/assets/229f46f2-c778-4bfc-9309-21cba7ecd1fa)
+
 ### 2.2 细胞形态学、纹理特征提取，细胞邻接关系建图
 相关代码：```WSIGraph.py```
 #### 2.2.1 形态学特征提取
@@ -156,5 +158,7 @@ HoVer-Net 预测时，由于使用滑动窗口切片，导致核可能被截断�
   - 输入：HoverNet生成的细胞轮廓（contours）和边界框（bboxes）
   - 处理：计算形态学特征、纹理特征与基于细胞邻接的图特征
   - 输出：各类细胞特征字典，可用于生存分析和分类任务
+  ![QQ_1739505277166](https://github.com/user-attachments/assets/1e51bc42-c483-45bf-bf5b-b94b00951759)
+
 
   
